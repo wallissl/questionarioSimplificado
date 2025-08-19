@@ -9,7 +9,8 @@ const server = http.createServer((request, response) => {
     }
 
     if(method == 'POST' && url == '/usuarios'){
-        return response.end(JSON.stringify({mensagem:"Cadastro de usuários"}));
+        response.statusCode = 201;
+        return response.end("Usuario criado com sucesso");
     }
     return response.end("Salve");
 })
